@@ -13,7 +13,7 @@ h1, h2, .linkbtn, .linkbtn-alt {
 }
 p, li, a, input, label {
     @include font($body, $size);
-    font-weight: 400;
+    font-weight: 500;
 }
 
 // 1. HEADER SECTION
@@ -29,14 +29,40 @@ nav {
     ul {
         @include flex($m-center, $c-center);
         li {
-            margin-right: 1rem;
+            margin-right: $size;
             &:last-of-type {
                 margin-right: 0;
             }
             a, a:visited {
                 color: $blk;
                 text-decoration: none;
+                transition: all .5s;
+                &:hover {
+                    font-size: 1.25rem;
+                    color: $main;
+                }
+                svg {
+                    width: 1.25rem;
+                    transition: all .5s;
+                    path {
+                        transition: all .5s;
+                    }
+                }
+                &:hover svg {
+                    width: 1.5rem;
+                    path {
+                        fill: $main;
+                    }
+                }
             }
+            .logo {
+                svg {
+                    width: 1.75rem;
+                }
+                &:hover svg {
+                    width: 2rem;
+                }
+            } 
         }
     }
 }
