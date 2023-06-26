@@ -1,4 +1,43 @@
-@import 'variables';
 @import 'resets';
+@import 'variables';
+// Table of Contents
+// 0. GENERAL STYLES
+// 1. HEADER SECTION
+//      1a. nav
+//      1b. hero
+// -------------------------------------------------------
+// 0. GENERAL STYLES
+h1, h2, .linkbtn, .linkbtn-alt {
+    @include font($head, $size);
+    font-weight: 700;
+}
+p, li, a, input, label {
+    @include font($body, $size);
+    font-weight: 400;
+}
 
-// 
+// 1. HEADER SECTION
+header {
+    width: 100vw;
+    height: 100vh;
+}
+// 1a. nav
+nav {
+    @include flex($m-center, space-between);
+    @include contain(1rem auto);
+    display: flex;
+    ul {
+        @include flex($m-center, $c-center);
+        li {
+            margin-right: 1rem;
+            &:last-of-type {
+                margin-right: 0;
+            }
+            a, a:visited {
+                color: $blk;
+                text-decoration: none;
+            }
+        }
+    }
+}
+// 1b. hero

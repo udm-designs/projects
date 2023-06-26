@@ -1,3 +1,5 @@
+@import url("https://use.typekit.net/fax7adl.css");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,4 +8,69 @@
   outline: none;
   border: none;
   list-style-type: none;
+}
+
+img {
+  width: 2rem;
+}
+
+h1, h2, .linkbtn, .linkbtn-alt {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+p, li, a, input, label {
+  font-family: "agenda", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+header {
+  width: 100vw;
+  height: 100vh;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  width: 90%;
+  margin: 1rem auto;
+  display: flex;
+}
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+nav ul li {
+  margin-right: 1rem;
+}
+nav ul li:last-of-type {
+  margin-right: 0;
+}
+nav ul li a, nav ul li a:visited {
+  color: #050505;
+  text-decoration: none;
 }

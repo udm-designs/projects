@@ -6,3 +6,7 @@
     border: none;
     list-style-type: none;
 }
+// This keeps images small until their width and height are changed to avoid overflow.
+img {
+    width: 2rem;
+}
