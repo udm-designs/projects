@@ -23,7 +23,7 @@ $marg: 0 auto;
     width: 90%;
     margin: $marg;
 }
-@mixin flex($m-center, $c-center) {
+@mixin flex($m-center, $c-center, $flow) {
     display: flex;
     align-items: $m-center;
     justify-content: $c-center;
