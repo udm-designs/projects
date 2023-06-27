@@ -145,75 +145,43 @@ nav ul li .logo:hover svg {
 #homepage header .hero {
   width: 90%;
   margin: 0 auto;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-  grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: 100%;
-  grid-template-rows: 100%;
-}
-
-#homepage header .hero > *:nth-child(1) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-}
-
-#homepage header .hero > *:nth-child(2) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-}
-
-#homepage header .hero > *:nth-child(3) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 #homepage header .hero .visuals {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-column: 1/3;
-  -ms-grid-row: 1;
-  grid-row: 1/1;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 100%;
-  grid-template-columns: 100%;
-  -ms-grid-rows: 100%;
-  grid-template-rows: 100%;
-}
-#homepage header .hero .visuals > *:nth-child(1) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-}
-#homepage header .hero .visuals div {
-  width: 100%;
+  width: 50%;
   height: 100%;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-}
-#homepage header .hero .visuals div img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  background-color: pink;
 }
 #homepage header .hero .visuals .backdrop {
   background-color: #8a4b00;
 }
 #homepage header .hero .visuals .img-contain {
-  -ms-grid-column: 2;
-  grid-column: 2/2;
-  -ms-grid-row: 2;
-  grid-row: 2/2;
   z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+#homepage header .hero .visuals .img-contain img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #homepage header .hero .text {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-  -ms-grid-row: 1;
-  grid-row: 1/1;
+  width: 50%;
+  height: 100%;
 }
