@@ -14,6 +14,10 @@ img {
   width: 2rem;
 }
 
+body {
+  background-color: #fafafa;
+}
+
 h1, h2, .linkbtn, .linkbtn-alt {
   font-family: "Ubuntu", sans-serif;
   font-size: 1.125rem;
@@ -29,19 +33,21 @@ p, li, a, input, label {
 .linkbtn, .linkbtn-alt {
   background-color: #00978e;
   color: #fafafa;
-  padding: 1.125rem 2rem;
+  text-align: center;
+  padding: 1.125rem 1.25rem;
   display: inline-block;
   text-decoration: none;
   font-weight: 400;
   border: 3px solid #00978e;
   border-radius: 1.125rem;
+  -webkit-box-shadow: -2px 2px 5px hsl(176, 100%, 15%);
+          box-shadow: -2px 2px 5px hsl(176, 100%, 15%);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 .linkbtn:hover, .linkbtn-alt:hover {
   color: #00978e;
   background-color: transparent;
-  padding: 1.125rem 2.5rem;
 }
 
 .linkbtn-alt {
@@ -86,8 +92,17 @@ nav {
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
   width: 90%;
+  max-width: 1200px;
   margin: 1rem auto;
   display: flex;
+}
+@media (max-width: 500px) {
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fafafa;
+  }
 }
 nav ul {
   display: -webkit-box;
@@ -103,6 +118,27 @@ nav ul {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+}
+@media (max-width: 500px) {
+  nav ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+  }
+  nav ul li {
+    display: none;
+    margin-right: 0;
+  }
+  nav ul li a:hover {
+    font-size: 1.125rem;
+  }
+  nav ul #logo {
+    display: block;
+  }
+  nav ul #logo:hover + * {
+    display: block;
+  }
 }
 nav ul li {
   margin-right: 1.125rem;
@@ -141,10 +177,180 @@ nav ul li .logo svg {
 nav ul li .logo:hover svg {
   width: 2rem;
 }
+nav div.mobnav {
+  display: none;
+}
+@media (max-width: 500px) {
+  nav div.mobnav {
+    display: block;
+  }
+}
+@media (max-width: 500px) {
+  nav {
+    display: block;
+  }
+}
 
 #homepage header .hero {
   width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+#homepage header .hero .visuals {
+  width: 70%;
+  height: calc(90vh - 2rem);
+  position: relative;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  -ms-grid-row: 1;
+  grid-row: 1/1;
+  z-index: -1;
+}
+#homepage header .hero .visuals .backdrop {
+  background-color: #8a4b00;
+  height: 95%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  border-radius: 2rem;
+}
+#homepage header .hero .visuals .img-contain {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 1.125rem 0 0 1.125rem;
+  border-radius: 2rem;
+}
+#homepage header .hero .visuals .img-contain img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  border-radius: 2rem;
+}
+#homepage header .hero .visuals .img-contain .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, right top, left top, from(#FAFAFA), color-stop(33.33%, rgba(250, 250, 250, 0)));
+  background: linear-gradient(270deg, #FAFAFA 0%, rgba(250, 250, 250, 0) 33.33%);
+}
+#homepage header .hero .text {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 1;
+  grid-row: 1/1;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+#homepage header .hero .text h1 {
+  font-size: 5rem;
+  margin-bottom: 1.25rem;
+}
+#homepage header .hero .text h1 span {
+  color: #8a4b00;
+}
+#homepage header .hero .text div {
+  margin-bottom: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#homepage header .hero .text div .linkbtn {
+  margin-right: 1.25rem;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+#homepage header .hero .text div .linkbtn-alt {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+#homepage header .hero .text div .linkbtn-alt:hover {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+#homepage header .hero .text #searchbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-shadow: 2px 2px 5px #004d47;
+          box-shadow: 2px 2px 5px #004d47;
+  background: transparent;
+  border-radius: 1.25rem;
+}
+#homepage header .hero .text #searchbar input {
+  padding: 1.125rem 1.125rem;
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  border: 3px solid transparent;
+  border-bottom: 3px solid #00978e;
+  border-radius: 1.125rem 0 0 1.125rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+#homepage header .hero .text #searchbar input:focus-within {
+  color: #004d47;
+}
+#homepage header .hero .text #searchbar input::-webkit-input-placeholder {
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+#homepage header .hero .text #searchbar input::-moz-placeholder {
+  -moz-transition: color 0.5s;
+  transition: color 0.5s;
+}
+#homepage header .hero .text #searchbar input:-ms-input-placeholder {
+  -ms-transition: color 0.5s;
+  transition: color 0.5s;
+}
+#homepage header .hero .text #searchbar input::-ms-input-placeholder {
+  -ms-transition: color 0.5s;
+  transition: color 0.5s;
+}
+#homepage header .hero .text #searchbar input::placeholder {
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+#homepage header .hero .text #searchbar input:hover::-webkit-input-placeholder {
+  color: #00978e;
+}
+#homepage header .hero .text #searchbar input:hover::-moz-placeholder {
+  color: #00978e;
+}
+#homepage header .hero .text #searchbar input:hover:-ms-input-placeholder {
+  color: #00978e;
+}
+#homepage header .hero .text #searchbar input:hover::-ms-input-placeholder {
+  color: #00978e;
+}
+#homepage header .hero .text #searchbar input:hover::placeholder {
+  color: #00978e;
+}
+#homepage header .hero .text #searchbar button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -161,27 +367,27 @@ nav ul li .logo:hover svg {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  border: 3px solid #00978e;
+  border-radius: 0 1.125rem 1.125rem 0;
+  background-color: #00978e;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
-#homepage header .hero .visuals {
-  width: 50%;
-  height: 100%;
-  background-color: pink;
+#homepage header .hero .text #searchbar button svg path {
+  fill: #fafafa;
 }
-#homepage header .hero .visuals .backdrop {
-  background-color: #8a4b00;
+#homepage header .hero .text #searchbar button:hover {
+  border-left: none;
+  background-color: #fafafa;
 }
-#homepage header .hero .visuals .img-contain {
-  z-index: 1;
-  width: 100%;
-  height: 100%;
+#homepage header .hero .text #searchbar button:hover svg path {
+  fill: #00978e;
 }
-#homepage header .hero .visuals .img-contain img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-#homepage header .hero .text {
-  width: 50%;
-  height: 100%;
+#homepage header .hero .text #searchbar button:hover + input {
+  border-color: #00978e;
+  border-right: 1px solid #00978e;
 }

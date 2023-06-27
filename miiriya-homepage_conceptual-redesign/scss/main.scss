@@ -7,6 +7,9 @@
 //      1b. hero
 // -------------------------------------------------------
 // 0. GENERAL STYLES
+body {
+    background-color: $wht;
+}
 h1, h2, .linkbtn, .linkbtn-alt {
     @include font($head, $size);
     font-weight: 700;
@@ -18,17 +21,18 @@ p, li, a, input, label {
 .linkbtn, .linkbtn-alt {
     background-color: $main;
     color: $wht;
-    padding: 1.125rem 2rem;
+    text-align: center;
+    padding: 1.125rem 1.25rem;
     display: inline-block;
     text-decoration: none;
     font-weight: 400;
     border: 3px solid $main;
     border-radius: 1.125rem;
+    box-shadow: -2px 2px 5px hsl(176, 100%, 15%);
     transition: all .5s;
     &:hover {
         color: $main;
         background-color: transparent;
-        padding: 1.125rem 2.5rem;
     }
 }
 .linkbtn-alt {
@@ -50,9 +54,31 @@ header {
 nav {
     @include flex($m-center, space-between, $flow);
     @include contain(1rem auto);
+    @include resp(mob) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: $wht;
+    }
     display: flex;
     ul {
         @include flex($m-center, $c-center, $flow);
+        @include resp(mob) {
+            flex-flow: column wrap;
+            li {
+                display: none;
+                margin-right: 0;
+                a:hover {
+                    font-size: $size;
+                }
+            }
+            #logo {
+                display: block;
+                &:hover + * {
+                    display: block;
+                }
+            }
+        }
         li {
             margin-right: $size;
             &:last-of-type {
@@ -90,30 +116,134 @@ nav {
             } 
         }
     }
+    div.mobnav {
+        display: none;
+        @include resp(mob) {    
+            display: block;
+        }
+    }
+    @include resp(mob) {    
+        display: block;
+    }
 }
 // 1b. hero
 #homepage header .hero {
     @include contain($marg);
-    @include flex($m-center, $c-center, $flow);
+    // @include flex($m-center, $c-center, $flow);
+    display: grid;
+    align-items: center;
     flex: 1;
     .visuals {
-        width: 50%;
-        height: 100%;
-        background-color: pink;
+        width: 70%;
+        height: calc(90vh - 2rem);
+        position: relative;
+        grid-column: 1/3;
+        grid-row: 1/1;
+        z-index: -1;
         .backdrop {
             background-color: $ac;
+            height: 95%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            border-radius: 2rem;
         }
         .img-contain {
-            z-index: 1;
-            width: 100%;
+            position: relative;
             height: 100%;
+            width: 100%;
+            padding: 1.125rem 0 0 1.125rem;
+            border-radius: 2rem;
             img {
                 @include imgfix;
+                object-position: top;
+                border-radius: 2rem;
+            }
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(270deg, #FAFAFA 0%, rgba(250, 250, 250, 0.00) 33.33%);
             }
         }
     }
     .text {
-        width: 50%;
-        height: 100%;
+        grid-column: 2/3;
+        grid-row: 1/1;
+        justify-self: end;
+        h1 {
+            font-size: 5rem;
+            margin-bottom: 1.25rem;
+            span {
+                color: $ac;
+            }
+        }
+        div {
+            margin-bottom: 2.5rem;
+            display: flex;
+            .linkbtn {
+                margin-right: 1.25rem;
+                flex: 2;
+            }
+            .linkbtn-alt {
+                flex: 1;
+                &:hover {
+                    flex: 2;
+                }
+            }
+        }
+        #searchbar {
+            display: flex;
+            width: 100%;
+            box-shadow: 2px 2px 5px $main-15;
+            background: transparent;
+            border-radius: 1.25rem;
+            input {
+                padding: 1.125rem 1.125rem;
+                flex: 4;
+                order: 1;
+                border: 3px solid transparent;
+                border-bottom: 3px solid $main;
+                border-radius: 1.125rem 0 0 1.125rem;
+                transition: all .5s;
+                &:focus-within {
+                    color: $main-15;
+                }
+                &::placeholder {
+                    transition: color .5s;
+                }
+                &:hover::placeholder {
+                    color: $main;
+                }
+            }
+            button {
+                @include flex($m-center, $c-center, $flow);
+                flex: 1;
+                order: 2;
+                border: 3px solid $main;
+                border-radius: 0 1.125rem 1.125rem 0;
+                background-color: $main;
+                cursor: pointer;
+                transition: all .5s;
+                svg path {
+                    fill: $wht;
+                }
+                &:hover {
+                    border-left: none;
+                    background-color: $wht;
+                }
+                &:hover svg path {
+                    fill: $main;
+                }
+                &:hover + input {
+                    border-color: $main;
+                    border-right: 1px solid $main;
+                }
+            }
+        }
     }
 }
