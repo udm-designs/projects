@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 :root {
     --blk: #010101;
     --wht: #fefefe;
@@ -16,11 +17,23 @@ html {
 body {
     background-color: var(--wht);
     color: var(--blk);
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
+}
+h2 {
+    font-size: 2rem;
+}
+p {
+    text-wrap: pretty;
 }
 a {
+    display: inline-block;
     text-decoration: none;
     font-weight: 600;
+    color: var(--blk);
+    transition: color 0.25s;
+    &:hover {
+        color: var(--acc);
+    }
 }
 img {
     width: 100%;
@@ -29,39 +42,172 @@ img {
     min-width: 0px;
     max-width: 100%;
 }
+.btn {
+    border: 2px solid var(--acc);
+    background-color: var(--acc);
+    padding: 5px 20px;
+    text-align: center;
+    transition: color 0.25s, background-color 0.25s;
+    &:hover {
+        color: var(--acc);
+        background-color: transparent;
+    }
+}
 .contain {
     width: 90dvw;
     max-width: 1440px;
     margin: 0px auto;
 }
+.sbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+}
 
 /* Homepage */
 #hero {
     display: grid;
-    grid-template-columns: minmax(35%, 700px) minmax(65%, 1fr);
-    gap: 25px;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
     min-height: 100dvh;
 }
 
 /* Navigation Sidebar */
 aside {
+    padding: 25px 0px;
     background-color: var(--sec);
-    padding: 25px;
+    position: sticky;
+    top: 0px;
+    height: 100dvh;
+    h1 {
+        font-size: 2.5rem;
+    }
+    h5 {
+        margin: 15px 0px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 5px;
+        span {
+            font-size: 60%;
+        }
+    }
 }
 aside > div > h2 {
     margin: 10px 0px;
+    padding: 0px 25px;
+    font-size: 1.75rem;
 }
 aside nav {
+    padding: 0px 25px;
     margin-bottom: 25px;
+    h3 {
+        text-transform: uppercase;
+        font-size: 0.95rem;
+    }
+    h2 {
+        font-weight: 500;
+        font-size: 1.25rem;
+    }
+    a {
+        position: relative;
+        width: 100%;
+        padding: 10px 0px;
+        transition: padding 0.5s, color 0.5s;
+    }
+    a:hover {
+        padding-left: 15px;
+        h2 {
+            font-weight: 600;
+        }
+        &::before {
+            width: 5px;
+        }
+    }
+    a::before {
+        content: "";
+        width: 0px;
+        height: 100%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        background-color: var(--acc);
+        transition: width 0.5s;
+    }
 }
 #bio {
+    padding: 0px 25px;
     margin-bottom: 25px;
-    p {
-        margin: 15px 0px;
+    a {
+        font-weight: 800;
+        font-size: 1.15rem;
+        display: block;
     }
 }
 
 /* Introduction Section */
 main {
-    padding: 25px;
+    padding: 25px 0px;
+}
+main #intro {
+    margin-bottom: 50px;
+    p {
+        margin: 10px 0px;
+        &:first-of-type {
+            margin-top: 15px;
+        }
+    }
+}
+main .gallery {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    .imgContainer {
+        min-height: 250px;
+    }
+    img {
+        height: 100%;
+    }
+}
+
+/* LARGE DESKTOP RESPONSIVENESS MEDIA QUERY */
+@media screen and (min-height: 1024px) {
+    
+}
+
+/* TABLET RESPONSIVENESS MEDIA QUERY */
+@media screen and (max-width: 925px) and (min-width: 526px) {
+    
+}
+
+/* MOBILE RESPONSIVENESS MEDIA QUERY */
+@media screen and (max-width: 600px) {
+    #hero {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: 100dvh;
+    }
+}
+
+/* Custom Scrollbar */
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--blk) #fff0;
+}
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 2px;
+}
+*::-webkit-scrollbar-track {
+    background: #fff0;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: var(--blk);
+    border-radius: 10px;
+    border: none;
+}
+body .gallery {
+    scrollbar-color: var(--main) #fff0;
 }
