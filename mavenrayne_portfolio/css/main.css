@@ -220,6 +220,7 @@ main .p-gallery {
     margin-bottom: 80px;
     .imgContain.opener {
         grid-column: 1 / 3;
+        /* Below not working!! */
         grid-row: 1 / 3;
     }
 }
