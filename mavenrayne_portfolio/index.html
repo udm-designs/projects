@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <div id="hero" class="contain">
+        <header id="hero" class="contain">
             <aside>
                 <div>
                     <div id="bio">
@@ -67,7 +67,7 @@
                     <!-- <a href="#" id="contact">Contact Me</a> -->
                 </div>
             </aside>
-            <main>
+            <div id="introduction">
                 <div id="intro">
                     <h2>Introduction</h2>
                     <p>
@@ -75,7 +75,13 @@
                         everything I do.
                     </p>
                     <p>
-                        I’m an interdisciplinary designer working across interior architecture, graphic design, and fine arts. I approach each project as parts of a whole shaped by the way humans live and interact. I’m always thinking about how people move through and use spaces, how they feel within them, and how design can support, not complicate, their daily lives.
+                        I’m an interdisciplinary designer working across 
+                        interior architecture, graphic design, and fine arts. I 
+                        approach each project as parts of a whole shaped by the 
+                        way humans live and interact. I’m always thinking about 
+                        how people move through and use spaces, how they feel 
+                        within them, and how design can support, not complicate, 
+                        their daily lives.
                     </p>
                     <p>
                         Sustainability, accessibility, and functionality are not 
@@ -108,28 +114,53 @@
                         supported, and at home.
                     </p>
                 </div>
-                <h2 id="pHead">Project Gallery</h2>
-                <div class="gallery">
-                    <div class="imgContainer">
-                        <img src="media/ph1.jpg" alt=".">
-                    </div>
-                    <div class="imgContainer">
-                        <img src="media/ph2.jpg" alt=".">
-                    </div>
-                    <div class="imgContainer">
-                        <img src="media/ph3.jpg" alt=".">
-                    </div>
-                    <div class="imgContainer">
-                        <img src="media/ph4.jpg" alt=".">
-                    </div>
-                    <div class="imgContainer">
-                        <img src="media/ph5.jpg" alt=".">
-                    </div>
-                    <div class="imgContainer">
-                        <img src="media/ph6.jpg" alt=".">
+                <div class="cardLayout">
+                    <a href="#iGal" id="iCard" class="card">
+                        <h3>Interior Design Gallery</h3>
+                        <a href="#iGal" class="btn alt">See Gallery</a>
+                    </a>
+                    <a href="#gGal" id="gCard" class="card">
+                        <h3>Graphic Design Gallery</h3>
+                        <a href="#gGal" class="btn alt">See Gallery</a>
+                    </a>
+                    <div>
+                        <a href="#faGal" id="faCard" class="card">
+                            <h3>Fine Arts Gallery</h3>
+                            <a href="#faGal" class="btn alt">See Gallery</a>
+                        </a>
+                        <a href="#pGal" id="pCard" class="card">
+                            <h3>Photography Gallery</h3>
+                            <a href="#pGal" class="btn alt">See Gallery</a>
+                        </a>
                     </div>
                 </div>
-            </main>
-        </div>
+            </div>
+        </header>
+        <main>
+            <h2>Interior Design Gallery</h2>
+            <section id="iGal" class="contain p-gallery">
+                <div class="imgContain">
+                    <img src="media/id/" alt="interior design.">
+                </div>
+            </section>
+            <h2>Graphic Design Gallery</h2>
+            <section id="gGal" class="contain p-gallery">
+                <div class="imgContain">
+                    <img src="media/gd/" alt="graphic design.">
+                </div>
+            </section>
+            <h2>Fine Arts Gallery</h2>
+            <section id="faGal" class="contain p-gallery">
+                <div class="imgContain">
+                    <img src="media/fa/" alt="fine arts.">
+                </div>
+            </section>
+            <h2>Photography Gallery</h2>
+            <section id="pGal" class="contain p-gallery">
+                <div class="imgContain">
+                    <img src="media/p/" alt="interior design.">
+                </div>
+            </section>
+        </main>
     </body>
 </html>
