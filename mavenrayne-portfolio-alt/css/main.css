@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    --blk: #010101;
+    --wht: #fefefe;
+    --main: #555;
+    --sec: #aaa;
+    --acc: #b51d8f; 
+}
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: var(--wht);
+    color: var(--blk);
+    font-family: "Roboto", sans-serif;
+}
+p {
+    text-wrap: pretty;
+}
+a {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--blk);
+    transition: color 0.25s;
+    &:hover {
+        color: var(--acc);
+    }
+}
+img {
+    width: 100%;
+    object-fit: cover;
+    min-height: 0px;
+    min-width: 0px;
+    max-width: 100%;
+}
+.btn {
+    border: 2px solid var(--acc);
+    background-color: var(--acc);
+    padding: 5px 20px;
+    text-align: center;
+    transition: color 0.25s, background-color 0.25s;
+    &:hover {
+        color: var(--acc);
+        background-color: transparent;
+    }
+}
+.contain {
+    width: 90dvw;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.sbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+}
+
+/* HEADER & NAVIGATION */
+header {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: max-content minmax(0px, 1fr);
+    background: 
+        linear-gradient(0deg, #fffc, #fffc),
+        url("../media/id/final-251-3d-paper-model-photograph.jpg");
+    background-size: cover;
+}
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+    gap: 25px;
+}
+header .logo a {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+header .links {
+    display: flex;
+    gap: 25px;
+}
+header .dropdown {
+    cursor: pointer;
+    position: relative;
+    .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        position: absolute;
+        top: 25px;
+        z-index: 1;
+        background-color: #fff1;
+        backdrop-filter: blur(15px);
+        border-radius: 15px;
+        width: max-content;
+        visibility: hidden;
+        opacity: 0%;
+        transform: translateY(-25px);
+    }
+    &:hover .menu {
+        visibility: visible;
+        opacity: 100%;
+        transform: translateY(0px);
+    }
+}
+
+/* FOOTER */
+
+
+/* LARGE DESKTOP RESPONSIVENESS MEDIA QUERY */
+@media screen and (min-height: 1024px) {
+    
+}
+
+/* TABLET RESPONSIVENESS MEDIA QUERY */
+@media screen and (max-width: 925px) and (min-width: 526px) {
+    
+}
+
+/* MOBILE RESPONSIVENESS MEDIA QUERY */
+@media screen and (max-width: 600px) {
+
+}
