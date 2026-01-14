@@ -125,12 +125,17 @@ header .dropdown {
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
-.hero .contain .col:first-of-type {
+.hero .contain .cola {
     display: flex;
     flex-direction: column;
     h1 {
         font-size: clamp(2rem, 500%, 6rem);
     }
+}
+.hero .contain .colb {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
 }
 
 /* FOOTER */
