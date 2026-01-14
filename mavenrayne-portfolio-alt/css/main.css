@@ -44,6 +44,7 @@ img {
     background-color: var(--acc);
     padding: 5px 20px;
     text-align: center;
+    border-radius: 15px;
     transition: color 0.25s, background-color 0.25s;
     &:hover {
         color: var(--acc);
@@ -76,8 +77,8 @@ header nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 25px;
     gap: 25px;
+    margin: 15px auto;
 }
 header .logo a {
     font-size: 1.25rem;
@@ -86,17 +87,23 @@ header .logo a {
 header .links {
     display: flex;
     gap: 25px;
+    > a {
+        padding: 10px 0px;
+    }
 }
 header .dropdown {
     cursor: pointer;
     position: relative;
+    > a {
+        padding: 10px 0px;
+    }
     .menu {
         display: flex;
         flex-direction: column;
         gap: 15px;
         padding: 15px;
         position: absolute;
-        top: 25px;
+        top: 100%;
         z-index: 1;
         background-color: #fff1;
         backdrop-filter: blur(15px);
@@ -105,11 +112,24 @@ header .dropdown {
         visibility: hidden;
         opacity: 0%;
         transform: translateY(-25px);
+        transition: visibility 0.5s, opacity 0.5s, transform 0.5s;
     }
     &:hover .menu {
         visibility: visible;
         opacity: 100%;
         transform: translateY(0px);
+    }
+}
+/* Header Hero */
+.hero .contain {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+.hero .contain .col:first-of-type {
+    display: flex;
+    flex-direction: column;
+    h1 {
+        font-size: clamp(2rem, 500%, 6rem);
     }
 }
 
