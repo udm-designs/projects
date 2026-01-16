@@ -73,6 +73,25 @@ img {
     -webkit-text-fill-color: transparent;
     display: inline-block;
 }
+#totop {
+    aspect-ratio: 1 / 1;
+    position: fixed;
+    bottom: 10px;
+    right: -40px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px;
+    opacity: 30%;
+    transition: right 0.5s, opacity 0.5s;
+    &:hover {
+        opacity: 100%;
+        right: 0px;
+        background-color: var(--acc);
+        color: var(--wht);
+    }
+}
 
 /* HEADER & NAVIGATION */
 header {
@@ -166,7 +185,7 @@ header .dropdown {
 }
 
 /* Homepage Galleries */
-main {
+/* main {
     margin-bottom: 40px;
     > h2 {
         margin-bottom: 25px;
@@ -178,6 +197,20 @@ main .p-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
+} */
+main > h2 {
+    margin-bottom: 25px;
+    font-size: clamp(1.5rem, 3vw, 4rem);
+}
+main .p-gallery {
+    /* Come back to because girl what is this?? */
+    columns: 3 300px;
+    gap: 25px;
+    margin-bottom: calc(80px - 25px);
+}
+main .p-gallery > div {
+    break-inside: avoid;
+    margin-bottom: 25px;
 }
 
 
