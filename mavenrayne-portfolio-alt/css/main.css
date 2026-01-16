@@ -152,6 +152,11 @@ header .dropdown {
         transform: translateY(0px);
     }
 }
+.active {
+    color: var(--altb);
+    border-bottom: 0.5px solid var(--altb);
+}
+
 /* Header Hero */
 .hero {
     align-self: center;
@@ -183,21 +188,47 @@ header .dropdown {
         gap: 15px;
     }
 }
-
-/* Homepage Galleries */
-/* main {
-    margin-bottom: 40px;
-    > h2 {
-        margin-bottom: 25px;
-        font-size: clamp(1.5rem, 3vw, 4rem);
+/* Process Page Hero */
+.hero {
+    align-self: center;
+}
+.hero .contain {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+}
+.hero .contain .cola {
+    display: flex;
+    flex-direction: column;
+    align-self: end;
+    h1 {
+        font-size: clamp(2rem, 6vw, 6rem);
     }
 }
-main .p-gallery {
-    margin-bottom: 40px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.hero .contain .colb {
+    display: flex;
     gap: 25px;
-} */
+    backdrop-filter: blur(5px);
+    div:first-child p:first-child {
+        font-weight: 800;
+        font-size: 205%;
+    }
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: var(--main);
+    color: var(--wht);
+    text-align: center;
+    padding: 25px 0px;
+}
+
+/* Homepage Galleries */
 main > h2 {
     margin-bottom: 25px;
     font-size: clamp(1.5rem, 3vw, 4rem);
@@ -212,6 +243,8 @@ main .p-gallery > div {
     break-inside: avoid;
     margin-bottom: 25px;
 }
+
+
 
 
 /* LARGE DESKTOP RESPONSIVENESS MEDIA QUERY */
