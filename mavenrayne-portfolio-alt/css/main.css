@@ -218,6 +218,15 @@ main > h2 {
     margin-bottom: 25px;
     font-size: clamp(1.5rem, 3vw, 4rem);
 }
+main > h3 {
+    text-align: center;
+    color: var(--altb);
+}
+main > h3 + p {
+    margin: 10px auto 25px;
+    max-width: 700px;
+    text-align: center;
+}
 main .p-gallery {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
