@@ -282,6 +282,17 @@ main .p-gallery > div {
         font-size: clamp(2rem, 6vw, 6rem);
     }
 }
+.processPage .tags {
+    font-size: clamp(1.25rem, 2vw, 3rem);
+}
+.processCopy {
+    margin: 25px 0px;
+}
+.imageProcess {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
 
 /* Life Cast Process Page */
 #lifecast header {
@@ -311,6 +322,11 @@ main .p-gallery > div {
         h1 {
             font-size: clamp(2rem, 10vw, 6rem);
         }
+    }
+    .imageProcess {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
     }
 }
 

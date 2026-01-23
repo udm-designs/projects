@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const galleryImages = document.querySelectorAll('.p-gallery img');
+    const galleryImages = document.querySelectorAll('.p-gallery img, .imageProcess img');
     
     // Create overlay elements
     const overlay = document.createElement('div');
