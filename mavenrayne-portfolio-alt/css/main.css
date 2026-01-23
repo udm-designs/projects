@@ -60,6 +60,30 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+#hamburger {
+    cursor: pointer;
+    max-width: 40px;
+    min-width: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    span {
+        height: 4px;
+        width: 100%;
+        background-color: var(--blk);
+        border-radius: 50px;
+        transition: background-color 0.5s, width 0.5s;
+        &:last-child {
+            width: 65%;
+        }
+    }
+    &:hover span {
+        background-color: var(--acc);
+        &:last-child {
+            width: 100%;
+        }
+    }
+}
 .row, .stack {
     display: flex;
     flex-wrap: wrap;
@@ -211,6 +235,7 @@ footer {
     color: var(--wht);
     text-align: center;
     padding: 25px 0px;
+    margin-top: 40px;
 }
 
 /* Homepage Galleries */
@@ -322,6 +347,9 @@ main .p-gallery > div {
         h1 {
             font-size: clamp(2rem, 10vw, 6rem);
         }
+    }
+    .processPage header {
+        min-height: 40dvh;
     }
     .imageProcess {
         display: grid;
