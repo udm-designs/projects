@@ -64,8 +64,9 @@ img {
     cursor: pointer;
     max-width: 40px;
     min-width: 30px;
-    display: flex;
+    display: none;
     flex-direction: column;
+    justify-content: center;
     gap: 5px;
     span {
         height: 4px;
@@ -355,6 +356,80 @@ main .p-gallery > div {
         display: grid;
         grid-template-columns: 1fr;
         gap: 25px;
+    }
+}
+
+/* MOBILE/TABLET HYBRID RESPONSIVENESS MEDIA QUERY */
+@media screen and (max-width: 805px) {
+    nav.contain {
+        position: fixed;
+        width: 100dvw;
+        left: 0px;
+        top: 0px;
+        background-color: #fefefe;
+        margin: 0px;
+        padding: 25px 5dvw;
+    }
+    header .hero {
+        padding-top: 65px;
+    }
+    #hamburger {
+        display: flex;
+        order: 1;
+    }
+    header .logo {
+        order: 2;
+    }
+    .resume {
+        order: 3;
+        margin-left: auto;
+    }
+    header .links {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 100dvh;
+        width: 50dvw;
+        z-index: 5;
+        flex-direction: column;
+        background-color: #b5790199;
+        padding: 0px 20px;
+        > a {
+            padding: 10px 0px;
+        }
+    }
+    header .dropdown {
+        cursor: pointer;
+        position: relative;
+        > a {
+            padding: 10px 0px;
+        }
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 15px;
+            position: absolute;
+            top: 100%;
+            z-index: 1;
+            background-color: #fff1;
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            width: max-content;
+            visibility: hidden;
+            opacity: 0%;
+            transform: translateY(-25px);
+            transition: visibility 0.5s, opacity 0.5s, transform 0.5s;
+        }
+        &:hover .menu {
+            visibility: visible;
+            opacity: 100%;
+            transform: translateY(0px);
+        }
+    }
+    .active {
+        color: var(--altb);
+        border-bottom: 0.5px solid var(--altb);
     }
 }
 
