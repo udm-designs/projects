@@ -393,43 +393,24 @@ main .p-gallery > div {
         z-index: 5;
         flex-direction: column;
         background-color: #b5790199;
-        padding: 0px 20px;
-        > a {
-            padding: 10px 0px;
-        }
-    }
-    header .dropdown {
-        cursor: pointer;
-        position: relative;
-        > a {
-            padding: 10px 0px;
-        }
-        .menu {
+        backdrop-filter: blur(15px);
+        padding: 10px 20px;
+        display: none;
+        &.mobActive {
             display: flex;
-            flex-direction: column;
-            gap: 15px;
-            padding: 15px;
-            position: absolute;
-            top: 100%;
-            z-index: 1;
-            background-color: #fff1;
-            backdrop-filter: blur(15px);
-            border-radius: 15px;
-            width: max-content;
-            visibility: hidden;
-            opacity: 0%;
-            transform: translateY(-25px);
-            transition: visibility 0.5s, opacity 0.5s, transform 0.5s;
-        }
-        &:hover .menu {
-            visibility: visible;
-            opacity: 100%;
-            transform: translateY(0px);
         }
     }
-    .active {
-        color: var(--altb);
-        border-bottom: 0.5px solid var(--altb);
+    header .dropdown .menu {
+        padding-top: 11px;
+        top: 0px;
+        right: 0px;
+        z-index: 6;
+        border-radius: 15px;
+        width: calc(100% - 120px);
+        background: none;
+        backdrop-filter: none;
+        border-radius: 0px;
+        border-left: 0.5px solid var(--altb);
     }
 }
 
