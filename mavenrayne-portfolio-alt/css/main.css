@@ -366,6 +366,7 @@ main .p-gallery > div {
         width: 100dvw;
         left: 0px;
         top: 0px;
+        z-index: 10;
         background-color: #fefefe;
         margin: 0px;
         padding: 25px 5dvw;
@@ -389,7 +390,7 @@ main .p-gallery > div {
         top: 0px;
         left: 0px;
         height: 100dvh;
-        width: 50dvw;
+        width: 70dvw;
         z-index: 5;
         flex-direction: column;
         background-color: #b5790199;
@@ -416,6 +417,13 @@ main .p-gallery > div {
 
 /* MOBILE RESPONSIVENESS MEDIA QUERY */
 @media screen and (max-width: 600px) {
+    header .links {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 100dvh;
+        width: 100dvw;
+    }
     .hero .contain .colb {
         flex-direction: column;
         gap: 15px;s
@@ -423,5 +431,4 @@ main .p-gallery > div {
             font-size: 150%;
         }
     }
-    
 }
