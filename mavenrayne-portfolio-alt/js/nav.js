@@ -18,7 +18,7 @@ document.addEventListener('click', function(event) {
 });
 
 // Optional: If you have a specific X button, add this
-// let closeButton = document.querySelector('#close-menu');
-// closeButton.addEventListener('click', function() {
-//     hamLinks.classList.remove('mobActive');
-// });
+let closeButton = document.querySelector('#close');
+closeButton.addEventListener('click', function() {
+    hamLinks.classList.remove('mobActive');
+});
