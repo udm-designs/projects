@@ -1,0 +1,19 @@
+.comp-mock {
+    overflow-y: scroll;
+    max-width: fit-content;
+    border: 1px solid black;
+    scrollbar-color: black transparent;
+    scrollbar-width: thin;
+}
+.mob-mock {
+    min-width: 320px;
+    max-height: 568px;
+}
+.tab-mock {
+    min-width: 768px;
+    max-height: 1024px;
+}
+.desk-mock {
+    min-width: 1440px;
+    max-height: 1024px;
+}
